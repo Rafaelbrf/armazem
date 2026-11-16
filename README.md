@@ -1,4 +1,4 @@
-#Projeto pessoal de estudo, feito durante o curso de Análise e Desenvolvimento de Sistemas (UEPB).
+Projeto pessoal de estudo, feito durante o curso de Análise e Desenvolvimento de Sistemas (UEPB).
 
 Sistema web de controle de estoque que junta Programação Orientada a Objetos, banco de dados SQL e desenvolvimento web (front-end e back-end).
 
