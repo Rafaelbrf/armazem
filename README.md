@@ -1,3 +1,19 @@
+#Projeto pessoal de estudo, feito durante o curso de Análise e Desenvolvimento de Sistemas (UEPB).
+
+Sistema web de controle de estoque que junta Programação Orientada a Objetos, banco de dados SQL e desenvolvimento web (front-end e back-end).
+
+Tecnologias: Java (POO), SQL (SQLite), HTML e CSS, Maven.
+
+O que o sistema faz:
+- Cadastro de produtos com tipo, quantidade e valor
+- Entrada e saída de estoque
+- Login com cargos (Operador, Supervisor, Gerente e ADM) e permissões
+- Código único para cada usuário
+- Histórico de quem fez cada ação
+- Três bancos de dados separados: produtos, usuários e histórico
+
+Projeto em desenvolvimento, usado para praticar e aprender.
+
 # Armazém
 
 Sistema web de controle de armazém feito em **Java (POO)** com **HTML + CSS** e banco de dados **SQL (SQLite)**.
