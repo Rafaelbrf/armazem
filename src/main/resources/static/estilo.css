@@ -1,0 +1,399 @@
+/*
+   ESTILO DO SITE (CSS) - VERSÃO ESCURA
+   O CSS define a APARÊNCIA: cores, tamanhos, espaços, bordas...
+
+   Como ler: cada bloco tem um "seletor" (quem recebe o estilo)
+   e, entre chaves { }, as propriedades:   propriedade: valor;
+
+   Seletores usados aqui:
+     body         é a tag <body> (a página inteira)
+     .nome        é tudo que tem class="nome" no HTML
+     a:hover      é o link quando o mouse está em cima
+
+   Cores: usamos só o NOME da cor em inglês, em tudo (nada de código com #).
+   Paleta do site:
+     black             fundo da página e das caixas
+     white             texto principal
+     silver e darkgray textos secundários
+     dimgray           bordas
+     royalblue e dodgerblue    azul de destaque (botão principal, links, logo)
+     midnightblue      azul bem escuro (título da tabela e linha com o mouse em cima)
+     lightsteelblue    texto claro sobre o azul escuro
+     limegreen         deu certo
+     tomato            erro e botão de excluir
+   Para mudar o visual, é só trocar o nome. Exemplo: troque dodgerblue por orange.
+*/
+
+
+/* deixa as partes do navegador também escuras (lista do select, caixinhas, barra de rolagem) */
+html {
+  color-scheme: dark;
+}
+
+
+/* PÁGINA INTEIRA */
+body {
+  margin: 0;                          /* tira a margem padrão do navegador */
+  font-family: Arial, sans-serif;     /* tipo de letra */
+  background-color: black;            /* cor de fundo da página */
+  color: white;                       /* cor do texto */
+}
+
+/* faz o tamanho dos elementos contar a borda e o espaço interno,
+   assim nada "estoura" para fora da tela */
+* {
+  box-sizing: border-box;
+}
+
+
+/* TOPO DO SITE (logo e menu) */
+header {
+  display: flex;                      /* coloca os itens um ao lado do outro */
+  align-items: center;                /* alinha tudo no meio, na vertical */
+  gap: 20px;                          /* espaço entre os itens */
+  padding: 12px 24px;                 /* espaço dentro: 12px em cima e embaixo, 24px nos lados */
+  background-color: black;
+  border-bottom: 1px solid dimgray;   /* linha fina embaixo do topo */
+}
+
+.logo {
+  font-weight: bold;                  /* negrito */
+  font-size: 18px;
+  color: dodgerblue;                  /* o nome do site em azul */
+}
+
+nav {
+  display: flex;                      /* links do menu lado a lado */
+  align-items: center;
+  gap: 16px;
+  flex: 1;                            /* ocupa todo o espaço que sobrar no topo */
+}
+
+nav a {
+  color: silver;                      /* links do menu em cinza claro */
+  text-decoration: none;              /* tira o sublinhado dos links */
+}
+
+nav a:hover {
+  color: dodgerblue;                  /* o link fica azul quando passa o mouse */
+}
+
+.espaco {
+  flex: 1;                            /* empurra o usuário e o Sair para a direita */
+}
+
+.quem {
+  color: darkgray;                    /* mostra o nome de quem está logado */
+  font-size: 14px;
+}
+
+
+/* CONTEÚDO PRINCIPAL */
+main {
+  max-width: 960px;                   /* largura máxima do conteúdo */
+  margin: 28px auto;                  /* auto nos lados centraliza na tela */
+  padding: 0 16px;
+}
+
+h1 {
+  margin: 0 0 18px 0;                 /* espaço só embaixo do título */
+  font-size: 26px;
+}
+
+h2 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+}
+
+
+/* CAIXA (login, formulários e cartões) */
+.caixa {
+  background-color: black;
+  border: 1px solid dimgray;
+  border-radius: 10px;                /* cantos arredondados */
+  padding: 22px;                      /* espaço entre a borda e o conteúdo */
+  max-width: 460px;                   /* caixa estreita */
+  margin: 0 auto 16px auto;           /* centraliza e deixa espaço embaixo */
+}
+
+.larga {
+  max-width: none;                    /* larga: sem limite de largura (cartões de usuários) */
+}
+
+.login {
+  margin-top: 60px;                   /* desce a caixa de login um pouco */
+}
+
+
+/* FORMULÁRIOS */
+label {
+  display: block;                     /* cada label fica em uma linha própria */
+  font-size: 14px;
+  color: silver;
+  margin-bottom: 14px;
+}
+
+input,
+select {
+  display: block;                     /* o campo fica embaixo do texto do label */
+  width: 100%;                        /* ocupa toda a largura disponível */
+  margin-top: 4px;
+  padding: 9px 11px;                  /* espaço dentro do campo */
+  background-color: black;
+  color: white;                       /* cor do que a pessoa digita */
+  border: 1px solid dimgray;
+  border-radius: 7px;
+  font-size: 16px;
+}
+
+/* quando clica no campo, a borda fica azul */
+input:focus,
+select:focus {
+  outline: none;
+  border-color: dodgerblue;
+}
+
+
+/* BOTÕES */
+/* vale para o button e para links com class="botao" */
+button,
+.botao {
+  display: inline-block;
+  padding: 9px 16px;
+  border: 1px solid dimgray;
+  border-radius: 7px;
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;                    /* mostra a mãozinha ao passar o mouse */
+  text-decoration: none;              /* tira o sublinhado (quando é link) */
+}
+
+button:hover,
+.botao:hover {
+  border-color: dodgerblue;           /* a borda fica azul ao passar o mouse */
+}
+
+.primario {
+  background-color: royalblue;        /* botão principal: azul */
+  border-color: royalblue;
+  color: white;
+}
+
+.primario:hover {
+  background-color: dodgerblue;       /* azul mais claro ao passar o mouse */
+  border-color: dodgerblue;
+}
+
+.perigo {
+  color: tomato;                      /* botão de excluir: texto vermelho */
+  border-color: tomato;
+}
+
+.perigo:hover {
+  background-color: darkred;          /* fica vermelho escuro ao passar o mouse */
+  border-color: tomato;
+  color: white;
+}
+
+
+/* BUSCA E FILTRO (em cima da tabela) */
+.filtro {
+  display: flex;                      /* campos lado a lado */
+  gap: 10px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;                    /* se faltar espaço, quebra para a linha de baixo */
+}
+
+.filtro input,
+.filtro select {
+  width: auto;                        /* nesses campos, a largura se ajusta sozinha */
+  flex: 1;
+  margin-top: 0;
+}
+
+
+/* TABELA (produtos e histórico) */
+table {
+  width: 100%;
+  border-collapse: collapse;          /* junta as bordas das células */
+  background-color: black;
+  border: 1px solid dimgray;
+}
+
+th,
+td {
+  padding: 11px 14px;                 /* espaço dentro de cada célula */
+  text-align: left;                   /* texto alinhado à esquerda */
+  border-bottom: 1px solid dimgray;   /* linha entre as linhas da tabela */
+}
+
+th {
+  font-size: 13px;
+  color: lightsteelblue;
+  background-color: midnightblue;     /* título das colunas em azul bem escuro */
+  text-transform: uppercase;          /* deixa o título da coluna em MAIÚSCULAS */
+}
+
+tbody tr:hover {
+  background-color: midnightblue;     /* a linha ganha destaque quando o mouse passa em cima */
+}
+
+.acoes {
+  display: flex;                      /* Editar e Excluir lado a lado */
+  gap: 8px;
+}
+
+.acoes form {
+  margin: 0;
+}
+
+
+/* AVISOS (caixinhas verde e vermelha) */
+.aviso {
+  padding: 11px 14px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  background-color: black;
+}
+
+.ok {
+  border: 1px solid limegreen;        /* borda e texto verdes: deu certo */
+  color: limegreen;
+}
+
+.erro {
+  border: 1px solid tomato;           /* borda e texto vermelhos: deu erro */
+  color: tomato;
+}
+
+.vazio {
+  text-align: center;                 /* texto no centro */
+  padding: 40px;
+  color: darkgray;
+  background-color: black;
+  border: 1px dashed dimgray;         /* borda tracejada */
+  border-radius: 10px;
+}
+
+
+/* ÁREA DE USUÁRIOS */
+.grade {
+  display: grid;                      /* organiza os itens em colunas */
+  grid-template-columns: 1fr 1fr;     /* 2 colunas do mesmo tamanho (login e senha lado a lado) */
+  gap: 0 20px;
+}
+
+.grade fieldset,
+.grade button,
+.grade .linha {
+  grid-column: 1 / -1;                /* estes itens ocupam a linha toda (as 2 colunas) */
+}
+
+fieldset {
+  border: 1px solid dimgray;          /* o quadro em volta das permissões */
+  border-radius: 8px;
+  margin: 0 0 14px 0;
+  padding: 10px 14px;
+}
+
+legend {
+  color: darkgray;                    /* o título do quadro */
+  font-size: 14px;
+}
+
+.check {
+  display: inline-block;              /* cada caixinha fica ao lado da outra */
+  margin: 0 16px 8px 0;
+  color: white;
+}
+
+.check input {
+  display: inline;                    /* a caixinha fica na mesma linha do texto */
+  width: auto;
+  margin: 0 4px 0 0;
+  accent-color: dodgerblue;           /* a caixinha marcada fica azul */
+}
+
+.linha {
+  display: flex;                      /* itens lado a lado, alinhados */
+  align-items: center;
+  gap: 10px;
+}
+
+.linha input {
+  margin: 0;
+}
+
+.quebra {
+  flex-wrap: wrap;                    /* se não couber, vai para a linha de baixo */
+  margin-bottom: 12px;
+}
+
+.selo {
+  background-color: royalblue;        /* etiqueta azul ADM ao lado do nome */
+  color: white;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 99px;                /* bem arredondada, tipo uma pílula */
+}
+
+.cinza {
+  background-color: dimgray;          /* etiqueta cinza para o próprio usuário */
+}
+
+
+/* TEXTO DE DICA (letra pequena e cinza) */
+.dica {
+  color: darkgray;
+  font-size: 14px;
+  margin: 0 0 14px 0;
+}
+
+
+/* ADICIONAR E RETIRAR ESTOQUE (na tabela de produtos) */
+.mover {
+  display: flex;                      /* campo e botões lado a lado */
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.mover input {
+  width: 70px;                        /* campo pequeno, só para o número */
+  margin: 0;
+  padding: 7px 8px;
+}
+
+.mais {
+  color: limegreen;                   /* botão Adicionar: verde */
+  border-color: limegreen;
+}
+
+.mais:hover {
+  background-color: darkgreen;        /* fica verde escuro ao passar o mouse */
+  border-color: limegreen;
+  color: white;
+}
+
+.menos {
+  color: orange;                      /* botão Retirar: laranja */
+  border-color: orange;
+}
+
+.menos:hover {
+  background-color: darkorange;       /* fica laranja forte ao passar o mouse */
+  border-color: orange;
+  color: black;
+}
+
+
+/* CÓDIGO (ID) DO USUÁRIO, por exemplo GER-0002 */
+.codigo {
+  font-family: monospace;             /* letra de máquina de escrever, boa para códigos */
+  font-size: 13px;
+  color: lightsteelblue;
+  border: 1px solid midnightblue;     /* moldura azul escura em volta do código */
+  border-radius: 6px;
+  padding: 1px 6px;
+}
