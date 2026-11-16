@@ -14,10 +14,10 @@ import armazem.web.Servidor;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        // 1) Cria a pasta "dados" e as tabelas, se ainda não existirem
+        // Cria a pasta "dados" e as tabelas, se ainda não existirem
         Conexao.criarTabelas();
 
-        // 2) Na primeira vez (nenhum usuário cadastrado), cria o ADM inicial com todas as permissões
+        // Na primeira vez (nenhum usuário cadastrado), cria o ADM inicial com todas as permissões
         UsuarioDDSQL usuarios = new UsuarioDDSQL();
         if (usuarios.contar() == 0) {
             Usuario admin = new Usuario();
@@ -37,10 +37,10 @@ public class Main {
             System.out.println("ADM criado -> login: admin | senha: admin123 | código: " + codigo);
         }
 
-        // 3) Bancos de versões antigas: quem ainda não tem código (ID) ganha um agora
+        // Bancos de versões antigas: quem ainda não tem código (ID) ganha um agora
         usuarios.gerarCodigosFaltando();
 
-        // 4) Se ainda não há nenhum produto, cadastra alguns exemplos (nome, tipo, quantidade, valor em centavos)
+        // Se ainda não há nenhum produto, cadastra alguns exemplos (nome, tipo, quantidade, valor em centavos)
         ProdutoDDSQL produtos = new ProdutoDDSQL();
         HistoricoDDSQL historico = new HistoricoDDSQL();
         if (produtos.contar() == 0) {
@@ -57,7 +57,7 @@ public class Main {
             System.out.println("Produtos de exemplo cadastrados.");
         }
 
-        // 5) Liga o servidor do site (porta 8080, ou a que estiver na variável PORT)
+        // Liga o servidor do site (porta 8080, ou a que estiver na variável PORT)
         int porta = 8080;
         if (System.getenv("PORT") != null) {
             porta = Integer.parseInt(System.getenv("PORT"));
