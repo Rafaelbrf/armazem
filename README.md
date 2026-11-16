@@ -2,6 +2,8 @@ Projeto pessoal de estudo, feito durante o curso de Análise e Desenvolvimento d
 
 Sistema web de controle de estoque que junta Programação Orientada a Objetos, banco de dados SQL e desenvolvimento web (front-end e back-end).
 
+Front-end: interface web em HTML e CSS com telas de login, produtos, histórico e gerenciamento de usuários, formulários com validação e tabelas com busca e filtro. As páginas são geradas dinamicamente pelo servidor em Java e mudam conforme as permissões de cada usuário.
+
 Tecnologias: Java (POO), SQL (SQLite), HTML e CSS, Maven.
 
 O que o sistema faz:
