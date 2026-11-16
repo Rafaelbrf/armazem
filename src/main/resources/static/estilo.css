@@ -1,27 +1,14 @@
 /*
-   ESTILO DO SITE (CSS) - VERSÃO ESCURA
-   O CSS define a APARÊNCIA: cores, tamanhos, espaços, bordas...
+ESTILO DO SITE (CSS)
+O CSS define a APARÊNCIA: cores, tamanhos, espaços, bordas.
 
-   Como ler: cada bloco tem um "seletor" (quem recebe o estilo)
-   e, entre chaves { }, as propriedades:   propriedade: valor;
+Como ler: cada bloco tem um "seletor" (quem recebe o estilo)
+e, entre chaves { }, as propriedades:   propriedade: valor;
 
-   Seletores usados aqui:
-     body         é a tag <body> (a página inteira)
-     .nome        é tudo que tem class="nome" no HTML
-     a:hover      é o link quando o mouse está em cima
-
-   Cores: usamos só o NOME da cor em inglês, em tudo (nada de código com #).
-   Paleta do site:
-     black             fundo da página e das caixas
-     white             texto principal
-     silver e darkgray textos secundários
-     dimgray           bordas
-     royalblue e dodgerblue    azul de destaque (botão principal, links, logo)
-     midnightblue      azul bem escuro (título da tabela e linha com o mouse em cima)
-     lightsteelblue    texto claro sobre o azul escuro
-     limegreen         deu certo
-     tomato            erro e botão de excluir
-   Para mudar o visual, é só trocar o nome. Exemplo: troque dodgerblue por orange.
+Seletores usados aqui:
+ body     é a tag <body> (a página inteira)
+ .nome    é tudo que tem class="nome" no HTML
+ a:hover  é o link quando o mouse está em cima
 */
 
 
@@ -39,8 +26,7 @@ body {
   color: white;                       /* cor do texto */
 }
 
-/* faz o tamanho dos elementos contar a borda e o espaço interno,
-   assim nada "estoura" para fora da tela */
+/* faz o tamanho dos elementos contar a borda e o espaço interno, assim nada "estoura" para fora da tela */
 * {
   box-sizing: border-box;
 }
@@ -388,12 +374,12 @@ legend {
 }
 
 
-/* CÓDIGO (ID) DO USUÁRIO, por exemplo GER-0002 */
+/* CÓDIGO (ID) DO USUÁRIO */
 .codigo {
-  font-family: monospace;             /* letra de máquina de escrever, boa para códigos */
+  font-family: monospace;             /* letra de máquina de escrever, boa para códigos 0v0 */
   font-size: 13px;
   color: lightsteelblue;
-  border: 1px solid midnightblue;     /* moldura azul escura em volta do código */
+  border: 1px solid midnightblue;     /* azul escura em volta do código */
   border-radius: 6px;
   padding: 1px 6px;
 }
